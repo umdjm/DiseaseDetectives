@@ -12,7 +12,7 @@ window.questions = {} || window.questions;
 		create: function() {
 			var game = this.game;
 
-			game.stage.backgroundColor='#fffff0';
+			game.stage.backgroundColor='#ffffff';
 
 			var text = game.add.text(180, 20, 'How are you feeling today?')
 			text.anchor.setTo(0.5, 0.5)

@@ -1,6 +1,6 @@
 function onDeviceReady() {
 
-	var game = new Phaser.Game(360, 640, Phaser.AUTO, 'game-container');
+	var game = new Phaser.Game(768, 1024, Phaser.AUTO, 'game-container');
 
 	_.each(window.questions, function(state, key) {
 		game.state.add(key, state);
