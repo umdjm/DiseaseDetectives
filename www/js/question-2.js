@@ -1,4 +1,4 @@
-window.questions = {} || window.questions;
+window.questions = window.questions || {};
 
 (function(ns) {
 	ns['2'] = {
