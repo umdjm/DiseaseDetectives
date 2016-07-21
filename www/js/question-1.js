@@ -6,7 +6,9 @@ window.questions = {} || window.questions;
 			var load = this.game.load;
 
 			['feeling-1', 'feeling-2', 'feeling-3', 'feeling-4', 'feeling-5']
-				.forEach( img => load.image(img, `img/${img}.png`) )
+				.forEach( function(img) {
+					load.image(img, `img/${img}.png`);
+				});
 		},
 
 		create: function() {
