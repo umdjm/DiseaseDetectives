@@ -23,6 +23,11 @@ window.questions = window.questions || {};
 				var icon = game.add.sprite(180, 40 + 90 * idx, 'feeling-' + feeling)
 				icon.anchor.setTo(0.5, 0,5)
 				icon.scale.setTo(0.2, 0.2)
+
+				icon.inputEnabled = true;
+				icon.events.onInputDown.add(function(sprite, pointer) {
+					game.state.start('2');
+				});
 			})
 		}
 	}
