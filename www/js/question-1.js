@@ -16,11 +16,12 @@ window.questions = window.questions || {};
 
 			game.stage.backgroundColor='#ffffff';
 
-			var text = game.add.text(180, 20, 'How are you feeling today?')
+            var style = { align: "center" };
+			var text = game.add.text(game.world.centerX, 80, 'How are you feeling today?', style);
 			text.anchor.setTo(0.5, 0.5)
 
 			this.icons = [1,2,3,4,5].map( function(feeling, idx) { 
-				var icon = game.add.sprite(180, 40 + 90 * idx, 'feeling-' + feeling)
+				var icon = game.add.sprite(game.world.centerX, 100 + 100 * idx, 'feeling-' + feeling);
 				icon.anchor.setTo(0.5, 0,5)
 				icon.scale.setTo(0.2, 0.2)
 
