@@ -9,7 +9,7 @@ window.questions = window.questions || {};
 		create: function() {
 			var game = this.game;
 			game.stage.backgroundColor='#ffffff';
-			lib.addText(game, "Do you feel today, compared to yesterday?", 80);
+			lib.addText(game, "How do you feel today, compared to yesterday?", 80);
 			lib.addResponse(game, "Better", 200, "2b");
 			lib.addResponse(game, "Worse", 300, "2b");
 			lib.addResponse(game, "The Same", 400, "2b");
