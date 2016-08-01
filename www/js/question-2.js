@@ -2,21 +2,6 @@ window.questions = window.questions || {};
 
 (function(ns, lib) {
 	ns['2'] = {
-		addText: function(game, text, position){
-			var style = { align: "center" };
-			var newText = game.add.text(game.world.centerX, position, 'Yes', style);
-			newText.anchor.setTo(0.5, 0,5);
-			return newText;
-		},
-
-		addResponse: function(game, text, position, next){
-			response= addText(game, text, position);
-
-			response.inputEnabled = true;
-			response.events.onInputDown.add(function(sprite, pointer) {
-				game.state.start(next);
-			});
-		},
 
 		preload: function() {
 		},

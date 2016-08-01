@@ -28,4 +28,26 @@ window.questionLib = window.questionLib || {};
         });
     };
 
+    ns.addMultiResponse = function (game, text, position, next) {
+
+        var icon = game.add.sprite(50, position, "magnifying-glass");
+        icon.inputEnabled = true;
+
+        function markChecked(sprite, pointer) {
+            icon.loadTexture("magnifying-glass-checked");
+        };
+        icon.events.onInputDown.add(markChecked);
+
+        var response = game.add.text(200, position, text);
+        response.inputEnabled = true;
+        response.events.onInputDown.add(markChecked);
+    };
+
+    ns.loadMultiRepsonseIcons = function(game){
+        ['magnifying-glass', 'magnifying-glass-checked']
+            .forEach( function(img) {
+                game.load.image(img, 'img/' + img + '.png');
+            });
+    }
+
 })(window.questionLib);
