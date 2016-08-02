@@ -5,3 +5,4 @@ plugins
 *.swp
 .DS_Store
 .idea/
+www/js/bundle.*
