@@ -15,11 +15,11 @@ export default class StretchyChoices {
             group.add(choice)
         }
 
-        addChoice(0, 0, CHOICES[0])
-        addChoice(0, 0, CHOICES[1])
-        addChoice(0, 0, CHOICES[2])
-        addChoice(0, 0, CHOICES[3])
-        addChoice(0, 0, CHOICES[4])
+        addChoice(game.world.centerX, 300, CHOICES[0])
+        addChoice(game.world.centerX * 1.5, 500, CHOICES[1])
+        addChoice(game.world.centerX * 1.5, 800, CHOICES[2])
+        addChoice(game.world.centerX * 0.5, 800, CHOICES[3])
+        addChoice(game.world.centerX * 0.5, 500, CHOICES[4])
     }
 
 }

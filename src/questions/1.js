@@ -10,7 +10,7 @@ function preload() {
 
 function create() {    
     const game = this.game;
-
+    
     game.stage.backgroundColor='#ffffff';
     addText(game, "How are you feeling today?", 80);
     addIconResponse(game, 'feeling-1', 200, '2');
