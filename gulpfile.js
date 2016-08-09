@@ -14,7 +14,10 @@ gulp.task('js', function() {
         debug: true
     })
 
-    b.transform(babelify, { presets: ['es2015'] })
+    b.transform(babelify, { 
+        presets: ['es2015'],
+        plugins: ['transform-exponentiation-operator']
+    })
 
     return b.bundle()
         .pipe(source('bundle.js'))
