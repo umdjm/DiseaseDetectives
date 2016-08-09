@@ -72,8 +72,20 @@ export class Connector extends Phaser.Sprite {
         load.image('connector', 'img/connection.png')         
     }
 
-    constructor(game, x, y) {
+    constructor(game, lhs, rhs, radius) {
         super(game, x, y, 'connector')
+       
+        let point = Phaser.Point
+            .subtract(lhs.world, rhs.world)
+            .multiply(0.5, 0.5)
+            .add(lhs.world.x, rhs.world.x)
+
+        this.x = point.x 
+        this.y = point.y    
+    }
+
+    update() {
+
     }
 
 }
