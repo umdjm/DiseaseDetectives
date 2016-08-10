@@ -22,10 +22,10 @@ gulp.task('js', function() {
     return b.bundle()
         .pipe(source('bundle.js'))
         .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-            .pipe(uglify())
-            .on('error', gutil.log)
-        .pipe(sourcemaps.write('./'))
+        //.pipe(sourcemaps.init({loadMaps: true}))
+        //    .pipe(uglify())
+        //    .on('error', gutil.log)
+        //.pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('www/js/'));
 });
 
