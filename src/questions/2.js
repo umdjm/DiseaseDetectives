@@ -1,13 +1,10 @@
 import Background from '../background'
 import { addText, addResponse } from './utils'
-import StretchyChoices from '../choices'
 
 function preload() {
     const load = this.game.load;
     Background.preload(load)
-    StretchyChoices.preload(load)
 }
-
 
 function create() {
     const  game = this.game;

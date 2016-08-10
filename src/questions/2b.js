@@ -8,7 +8,6 @@ import {
 
 function preload() { 
     const load = this.game.load
-
     StretchyChoices.preload(load)
     Background.preload(load)
 }

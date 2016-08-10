@@ -5,7 +5,7 @@ function onDeviceReady() {
     const game = new Phaser.Game(768, 1024, Phaser.AUTO, 'game-container')
    
     each(questions, (state, key) => game.state.add(key, state) )
-    game.state.start('2')
+    game.state.start('splash')
 
     const onPause = e => { game.paused = true }
     const onResume = e => { game.paused = false }

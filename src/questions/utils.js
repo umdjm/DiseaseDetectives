@@ -27,6 +27,18 @@ export function addIconResponse(game, icon, position, next){
     });
 }
 
+
+export function addSplash(game, icon, next){
+    var icon = game.add.sprite(game.world.centerX, game.world.centerY, icon);
+    icon.anchor.setTo(0.5, 0.5)
+    icon.scale.setTo(0.5, 0.5)
+
+    icon.inputEnabled = true;
+    icon.events.onInputDown.add(function(sprite, pointer) {
+        game.state.start(next);
+    });
+}
+
 export function addMultiResponse(game, text, position, next) {
     var icon = game.add.sprite(50, position, "magnifying-glass");
     icon.inputEnabled = true;
