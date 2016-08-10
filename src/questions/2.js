@@ -1,9 +1,11 @@
 import Background from '../background'
+import StretchyChoices from '../choices'
 import { addText, addResponse } from './utils'
 
 function preload() {
     const load = this.game.load;
     Background.preload(load)
+    StretchyChoices.preload(load)
     load.onLoadComplete.addOnce(() => navigator.splashscreen.hide());
 }
 
