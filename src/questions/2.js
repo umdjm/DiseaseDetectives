@@ -4,6 +4,7 @@ import { addText, addResponse } from './utils'
 function preload() {
     const load = this.game.load;
     Background.preload(load)
+    load.onLoadComplete.addOnce(() => navigator.splashscreen.hide());
 }
 
 function create() {
