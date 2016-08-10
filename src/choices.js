@@ -1,4 +1,4 @@
-const CHOICES = ['stuffyNose', 'fever', 'chills', 'soreThroat', 'headAche']
+const CHOICES = ['stuffyNose', 'fever', 'chills', 'bodyAche', 'soreThroat', 'headAche']
 
 export default class StretchyChoices {
 
@@ -7,7 +7,7 @@ export default class StretchyChoices {
         Connector.preload(load)
     }
 
-    constructor(game) {
+    constructor(game, offset) {
         const group = this.group = game.add.group()
 
         const addChoice = (x, y, name) => {
@@ -15,11 +15,9 @@ export default class StretchyChoices {
             group.add(choice)
         }
 
-        addChoice(game.world.centerX, 300, CHOICES[0])
-        addChoice(game.world.centerX * 1.5, 500, CHOICES[1])
-        addChoice(game.world.centerX * 1.5, 800, CHOICES[2])
-        addChoice(game.world.centerX * 0.5, 800, CHOICES[3])
-        addChoice(game.world.centerX * 0.5, 500, CHOICES[4])
+        addChoice(game.world.centerX, game.world.centerY - 150, CHOICES[0 + offset])
+        addChoice(game.world.centerX * 1.5, game.world.centerY + 150, CHOICES[1 + offset])
+        addChoice(game.world.centerX * 0.5, game.world.centerY + 150, CHOICES[2 + offset])
     }
 
 }
@@ -30,7 +28,7 @@ export class Choice extends Phaser.Sprite {
         CHOICES.forEach( name => {
             load.image(name, `img/${name}.png`)
             load.image(`${name}On`, `img/${name}On.png`) 
-        }) 
+        })
     }
 
     constructor(game, x, y, name) {
@@ -60,7 +58,7 @@ export class Choice extends Phaser.Sprite {
 
         if(value != prevValue) {
             const name = this._name
-            this.loadTexture( value ? name : `${name}On` )
+            this.loadTexture( value ? `${name}On` : name)
             this.events.onChange.dispatch({ name, value })
         }
     }

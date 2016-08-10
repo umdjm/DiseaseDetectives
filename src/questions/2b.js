@@ -20,15 +20,11 @@ function create() {
     let game = this.game;
 
     game.stage.backgroundColor='#ffffff';
-    addText(game, "Which buttons show how you feel?", 80);
-    //addMultiResponse(game, "Cough", 200);
-    //addMultiResponse(game, "Sore Throat", 300);
-    //addMultiResponse(game, "Headache", 400);
-    //addMultiResponse(game, "Fever", 500);
-    let bg = new Background(game)
-    let choices = new StretchyChoices(game)
+    let bg = new Background(game, 0x99ff99)
+    let choices = new StretchyChoices(game, 0)
+    addText(game, " Do you have any of these symptoms?", 80);
 
-    addResponse(game, "Continue", 600, "2c");
+    addResponse(game, " Continue", 900, "2c");
 }
 
 export default { preload, create }

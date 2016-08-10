@@ -113,3 +113,11 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+@font-face {
+    font-family: 'Komikax';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/KOMIKAX_.ttf') format('truetype');
+}
+body {    font-family: 'Komikax';}
+.fontLoader {    position: absolute;    left: -1000px;}

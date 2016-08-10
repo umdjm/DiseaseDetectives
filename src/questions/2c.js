@@ -1,11 +1,18 @@
-import { 
-    loadMultiRepsonseIcons, 
-    addText, 
-    addMultiResponse, 
-    addResponse 
+import StretchyChoices from '../choices'
+import Background from '../background'
+
+import {
+    loadMultiRepsonseIcons,
+    addText,
+    addMultiResponse,
+    addResponse
 } from './utils'
 
-function preload() { 
+function preload() {
+    const load = this.game.load
+
+    StretchyChoices.preload(load)
+    Background.preload(load)
     loadMultiRepsonseIcons(this.game)
 }
 
@@ -13,10 +20,11 @@ function create() {
     let game = this.game;
 
     game.stage.backgroundColor='#ffffff';
-    addText(game, "Did any of the following happen today?", 80);
-    addMultiResponse(game, "I was too sick to go to school", 200);
-    addMultiResponse(game, "I had to go see the doctor", 300);
-    addResponse(game, "Continue", 400, "done");
+    let bg = new Background(game, 0xcc99cc)
+    let choices = new StretchyChoices(game, 3)
+    addText(game, " Do you have any aches or pains?", 80);
+
+    addResponse(game, " Continue", 900, "2d");
 }
 
 export default { preload, create }

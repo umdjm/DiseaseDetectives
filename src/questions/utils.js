@@ -1,7 +1,9 @@
 export function addText(game, text, position) {
-    var style = {align: "center"};
+    var style = {align: "center", font: "32px Komikax", fill: "white"};
     var newText = game.add.text(game.world.centerX, position, text, style);
     newText.anchor.setTo(0.5, 0, 5);
+    newText.stroke = "black";
+    newText.strokeThickness = 10;
     return newText;
 }
 
