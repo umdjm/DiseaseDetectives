@@ -2,10 +2,8 @@ import StretchyChoices from '../choices'
 import Background from '../background'
 
 import { 
-    loadMultiRepsonseIcons, 
-    addText, 
-    addMultiResponse, 
-    addResponse 
+    addText,
+    addResponse
 } from './utils'
 
 function preload() { 
@@ -13,14 +11,13 @@ function preload() {
 
     StretchyChoices.preload(load)
     Background.preload(load)
-    loadMultiRepsonseIcons(this.game)
 }
 
 function create() {
     let game = this.game;
 
-    game.stage.backgroundColor='#ffffff';
-    let bg = new Background(game, 0x99ff99)
+    game.stage.backgroundColor='#ff9999';
+    let bg = new Background(game, 0xff9999)
     let choices = new StretchyChoices(game, 0)
     addText(game, " Do you have any of these symptoms?", 80);
 

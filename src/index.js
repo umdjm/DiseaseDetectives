@@ -4,9 +4,8 @@ import questions from './questions'
 function onDeviceReady() {
     const game = new Phaser.Game(768, 1024, Phaser.AUTO, 'game-container')
    
-    each(questions, (state, key) => game.state.add(key, state) ) 
-    //game.state.start('1')
-    game.state.start('2b')
+    each(questions, (state, key) => game.state.add(key, state) )
+    game.state.start('2')
 
     const onPause = e => { game.paused = true }
     const onResume = e => { game.paused = false }
