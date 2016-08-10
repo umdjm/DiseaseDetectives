@@ -8,6 +8,7 @@ export default class Background {
 
     constructor(game, tint) {
         this.game = game;
+        game.stage.backgroundColor=tint;
         const group = this.group = game.add.group();
 
         const center = { x: game.width / 2, y: game.height / 2 }

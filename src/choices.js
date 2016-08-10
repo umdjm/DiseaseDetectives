@@ -13,11 +13,26 @@ export default class StretchyChoices {
         const addChoice = (x, y, name) => {
             const choice = new Choice(game, x, y, name)
             group.add(choice)
+
+            return choice
+        }
+        
+        const addConnector = (lhs, rhs) => {
+            const conn = new Connector(game, lhs, rhs, 60)
+            group.add(conn)
+            group.sendToBack(conn)
+
+            return conn
         }
 
-        addChoice(game.world.centerX, game.world.centerY - 150, CHOICES[0 + offset])
-        addChoice(game.world.centerX * 1.5, game.world.centerY + 150, CHOICES[1 + offset])
-        addChoice(game.world.centerX * 0.5, game.world.centerY + 150, CHOICES[2 + offset])
+        const choices = [
+            addChoice(game.world.centerX, game.world.centerY - 150, CHOICES[0 + offset]),
+            addChoice(game.world.centerX * 1.5, game.world.centerY + 150, CHOICES[1 + offset]),
+            addChoice(game.world.centerX * 0.5, game.world.centerY + 150, CHOICES[2 + offset])
+        ]
+
+        addConnector(choices[0], choices[1])
+        addConnector(choices[0], choices[2])
     }
 
 }
@@ -37,7 +52,11 @@ export class Choice extends Phaser.Sprite {
         this._name = name
         this._selected = false
 
-        this.anchor.setTo(0.5, 0.5)
+        if(name !== 'fever')
+            this.anchor.setTo(0.5, 0.5)
+        else
+            this.anchor.setTo(0.5, 0.6)
+                
         this.scale.setTo(0.5, 0.5)
 
         let onChange = new Phaser.Signal()
@@ -71,20 +90,27 @@ export class Connector extends Phaser.Sprite {
     }
 
     constructor(game, lhs, rhs, radius) {
-        super(game, x, y, 'connector')
+        super(game, 0, 0, 'connector')
        
         let point = Phaser.Point
             .subtract(lhs.world, rhs.world)
             .multiply(0.5, 0.5)
-            .add(lhs.world.x, rhs.world.x)
+            .add(rhs.world.x, rhs.world.y)
 
         this.x = point.x 
         this.y = point.y    
+
+        this.anchor.setTo(0.5, 0.5)
+        this.scale.setTo(0.5, 0.5)
+
+        this.rotation = game.physics.arcade.angleBetween(lhs, rhs) + Math.PI/2
     }
 
     update() {
 
     }
+
+    
 
 }
 

@@ -16,8 +16,11 @@ function preload() {
 function create() {
     let game = this.game;
 
+    game.physics.startSystem(Phaser.Physics.ARCADE); 
+
     game.stage.backgroundColor='#ff9999';
     let bg = new Background(game, 0xff9999)
+
     let choices = new StretchyChoices(game, 0)
     addText(game, " Do you have any of these symptoms?", 80);
 
