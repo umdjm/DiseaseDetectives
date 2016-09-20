@@ -114,7 +114,7 @@ export class Connector extends Phaser.Sprite {
 
 }
 
-const MAX_TRIES = 500
+const MAX_TRIES = 5
 
 export class Layout {
 

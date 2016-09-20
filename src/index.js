@@ -1,11 +1,11 @@
 import { each } from 'lodash'
-import questions from './questions'
+import survey from './states/survey'
 
 function onDeviceReady() {
-    const game = new Phaser.Game(768, 1024, Phaser.AUTO, 'game-container')
-   
-    each(questions, (state, key) => game.state.add(key, state) )
-    game.state.start('2')
+    const game = new Phaser.Game(768, 1024, Phaser.CANVAS, 'game-container')
+
+    game.state.add('survey', survey)
+    game.state.start('survey');
 
     const onPause = e => { game.paused = true }
     const onResume = e => { game.paused = false }

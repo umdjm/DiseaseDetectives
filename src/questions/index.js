@@ -9,13 +9,6 @@ import q3 from './3'
 import done from './done'
 
 export default {
-    'splash': splash,
-    '1': q1,
-    '2': q2,
-    '2a': q2a,
-    '2b': q2b,
-    '2c': q2c,
-    '2d': q2d,
-    '3': q3,
-    'done': done
+    '2a' : q2a,
+    '2b' : q2b
 }

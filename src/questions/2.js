@@ -1,22 +1,9 @@
-import Background from '../background'
-import StretchyChoices from '../choices'
 import { addText, addResponse } from './utils'
 
-function preload() {
-    const load = this.game.load;
-    Background.preload(load)
-    StretchyChoices.preload(load)
-    load.onLoadComplete.addOnce(() => navigator.splashscreen.hide());
+function create(game, group) {
+    addText(game, group, "Are you sick with a cold today?", 80);
+    addResponse(game, group, "Yes", 200, "2b");
+    addResponse(game, group, "No", 300, "done");
 }
 
-function create() {
-    const  game = this.game;
-
-    game.stage.backgroundColor='#b2b2ff';
-    let bg = new Background(game, 0xb2b2ff)
-    addText(game, "Are you sick with a cold today?", 80);
-    addResponse(game, "Yes", 200, "2b");
-    addResponse(game, "No", 300, "done");
-}
-
-export default { preload, create }
+export default { create }
